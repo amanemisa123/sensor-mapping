@@ -1,0 +1,33 @@
+#!/bin/bash
+
+DBFILE=/usr/lib/cgi-bin/tolhnet/sensor.db
+
+cat << EOF
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ToLHnet service page</title>
+<style>
+table, th, td { border: 1px solid black; padding: 5px; }
+table { border-collapse: collapse; }
+</style>
+</head>
+<body>
+<p>Numero di valori acquisiti nelle ultime 24 ore:<br>(ideale: 1440)
+<p><table>
+EOF
+
+sqlite3 -html -header $DBFILE  "select name as valore, count(name) as 'q.tà', datetime(max(t)/1000, 'unixepoch', 'localtime') as 'ultima lettura' from measures where (strftime('%s','now')-t/1000)<86400 group by name order by name;"
+
+cat << EOF
+</table>
+<p>Ultime letture di tutti i valori registrati:<br>(dal più vecchio)
+<p><table>
+EOF
+
+sqlite3 -html -header $DBFILE  "select name as valore, datetime(max(t)/1000, 'unixepoch', 'localtime') as 'ultima lettura' from measures group by name order by max(t);"
+
+echo -e "</table>\n</body>\n</html>"

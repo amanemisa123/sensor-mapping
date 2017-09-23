@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ToLHnet sensor network</title>
+
+	<script>
+		function sensorclick(whichone) {
+			var e = document.getElementsByName(whichone)[0];
+			e.checked = !e.checked;
+		}
+	</script>
+  </head>
+
+  <body>
+
+	<table>
+	<tr>
+
+	<td>
+
+    <img src="planimetria2.png" usemap="#sensormap" alt="planimetry">
+
+    <map name="sensormap">
+		<area shape="circle" coords="560,455,12" href="javascript:sensorclick('sensor01')" alt="sensor 1"  title="sensor 1">
+		<area shape="circle" coords="451,419,12" href="javascript:sensorclick('sensor02')" alt="sensor 2"  title="sensor 2">
+		<area shape="circle" coords="434,484,12" href="javascript:sensorclick('sensor03')" alt="sensor 3"  title="sensor 3">
+		<area shape="circle" coords="599,413,12" href="javascript:sensorclick('sensor04')" alt="sensor 4"  title="sensor 4">
+		<area shape="circle" coords="480,257,12" href="javascript:sensorclick('sensor05')" alt="sensor 5"  title="sensor 5">
+		<area shape="circle" coords="381,134,12" href="javascript:sensorclick('sensor06')" alt="sensor 6"  title="sensor 6">
+		<area shape="circle" coords="132,193,12" href="javascript:sensorclick('sensor07')" alt="sensor 7"  title="sensor 7">
+		<area shape="circle" coords="249,363,12" href="javascript:sensorclick('sensor08')" alt="sensor 8"  title="sensor 8">
+		<area shape="circle" coords="439,541,12" href="javascript:sensorclick('sensor09')" alt="sensor 9"  title="sensor 9">
+		<area shape="circle" coords="566,567,12" href="javascript:sensorclick('sensor10')" alt="sensor 10" title="sensor 10">
+		<area shape="circle" coords="665,614,12" href="javascript:sensorclick('sensor11')" alt="sensor 11" title="sensor 11">
+		<area shape="circle" coords="666,528,12" href="javascript:sensorclick('sensor12')" alt="sensor 12" title="sensor 12">
+		<area shape="circle" coords="613,780,12" href="javascript:sensorclick('sensor13')" alt="sensor 13" title="sensor 13">
+		<area shape="circle" coords="663,714,12" href="javascript:sensorclick('sensor14')" alt="sensor 14" title="sensor 14">
+		<area shape="circle" coords="435,770,12" href="javascript:sensorclick('sensor15')" alt="sensor 15" title="sensor 15">
+		<area shape="circle" coords="508,689,12" href="javascript:sensorclick('sensor16')" alt="sensor 16" title="sensor 16">
+		<area shape="circle" coords="574,264,12" href="javascript:sensorclick('sensor17')" alt="sensor 17" title="sensor 17">
+		<area shape="circle" coords="663,137,12" href="javascript:sensorclick('sensor18')" alt="sensor 18" title="sensor 18">
+		<area shape="circle" coords="652,389,12" href="javascript:sensorclick('sensor19')" alt="sensor 19" title="sensor 19">
+	</map>
+
+	</td>
+
+	<td>
+
+	<form action="/display.html" target="_blank" method="GET">
+		<table>
+		<tr>
+		<td><label for="sensor01"> 1</label><input type="checkbox" name="sensor01"></td>
+		<td><label for="sensor02"> 2</label><input type="checkbox" name="sensor02"></td>
+		<td><label for="sensor03"> 3</label><input type="checkbox" name="sensor03"></td>
+		<td><label for="sensor04"> 4</label><input type="checkbox" name="sensor04"></td>
+		</tr>
+		<tr>
+
+		<td><label for="sensor05"> 5</label><input type="checkbox" name="sensor05"></td>
+		<td><label for="sensor06"> 6</label><input type="checkbox" name="sensor06"></td>
+		<td><label for="sensor07"> 7</label><input type="checkbox" name="sensor07"></td>
+		<td><label for="sensor08"> 8</label><input type="checkbox" name="sensor08"></td>
+
+		</tr>
+		<tr>
+
+		<td><label for="sensor09"> 9</label><input type="checkbox" name="sensor09"></td>
+		<td><label for="sensor10">10</label><input type="checkbox" name="sensor10"></td>
+		<td><label for="sensor11">11</label><input type="checkbox" name="sensor11"></td>
+		<td><label for="sensor12">12</label><input type="checkbox" name="sensor12"></td>
+
+		</tr>
+		<tr>
+
+		<td><label for="sensor13">13</label><input type="checkbox" name="sensor13"></td>
+		<td><label for="sensor14">14</label><input type="checkbox" name="sensor14"></td>
+		<td><label for="sensor15">15</label><input type="checkbox" name="sensor15"></td>
+		<td><label for="sensor16">16</label><input type="checkbox" name="sensor16"></td>
+
+		</tr>
+		<tr>
+		<td><label for="sensor17">17</label><input type="checkbox" name="sensor17"></td>
+		<td><label for="sensor18">18</label><input type="checkbox" name="sensor18"></td>
+		<td><label for="sensor19">19</label><input type="checkbox" name="sensor19"></td>
+		<td><label for="sensor20">20</label><input type="checkbox" name="sensor20"></td>
+		<td></td>
+		</tr>
+		<tr>
+		<td colspan="4">
+			<select name="parametername">
+				<option value="t">Temperature</option>
+				<option value="h">Humidity</option>
+				<option value="p">Pressure</option>
+			</select>
+		</td>
+		</tr>
+		<tr>
+		
+		<td colspan="4">
+		<input type="datetime-local" name="iDate">
+		</td>
+		</tr>
+		
+		<tr>
+		<td colspan="4">
+		<input type="datetime-local" name="sDate">
+		</td>
+		</tr>
+		<tr>
+		<td colspan="2">
+			<button type="reset">Reset</button>
+		</td>
+		<td colspan="2">
+			<button type="submit">Plot</button>
+		</td>
+		</tr>
+		</table>
+	</form>
+
+	</td>
+
+	</tr>
+	</table>
+
+
+  </body>
+</html>
